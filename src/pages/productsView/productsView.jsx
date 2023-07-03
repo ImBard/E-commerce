@@ -9,6 +9,7 @@ export function ProductsView() {
     {img: "https://github.com/ImBard/E-commerce/blob/main/src/assets/imgModels/prada.jpg?raw=true", name: "Moletom", price: "189"},
     {img: "https://github.com/ImBard/E-commerce/blob/main/src/assets/imgModels/prada1.jpg?raw=true", name: "Vestido", price: "700"},
     {img: "https://github.com/ImBard/E-commerce/blob/main/src/assets/imgModels/prada2.jpg?raw=true", name: "Bolsa", price: "250"},
+    {img: "https://raw.githubusercontent.com/ImBard/E-commerce/main/src/assets/imgModels/prada3.webp", name: "Conjunto Social", price: "75"},
   ]
 
   return (
