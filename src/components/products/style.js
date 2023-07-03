@@ -5,7 +5,6 @@ export const Product = styled.div`
   flex-direction: column;
   width: 32%;
   height: 610px;
-  background-color: white;
   overflow: hidden;
 `;
 

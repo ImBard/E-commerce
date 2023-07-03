@@ -5,12 +5,12 @@ export const MainList = styled.div`
   background-color: #1c1c1c;
   width: 100%;
   gap: 8px;
+  background-color: hsl(30, 38%, 92%);  
 `; 
 
 export const ContainerList = styled.div`
   display: flex;
   flex-wrap: wrap;
-  background-color: hsl(30, 38%, 92%);
   border: 1px solide darkgray;
   border-radius: 5px;
   width: 85%;
