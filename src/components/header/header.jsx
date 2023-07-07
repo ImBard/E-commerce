@@ -1,7 +1,11 @@
 import { MagnifyingGlass, User } from "@phosphor-icons/react";
 import { Bottom, ButtonList, Cart, Head, LabelCart, ListCategories, Search, SearchInput, Sign, Title, Top, Translate } from "./style";
+import { useContext } from "react";
+import { HelperContext } from "../../contexts/helpersContext";
 
 export function Header() {
+
+  const {cart} = useContext(HelperContext);
 
   const list = [
     "Home",
@@ -34,7 +38,7 @@ export function Header() {
         <LabelCart htmlFor="Cart">
           Cart
           <Cart id="Cart" onClick={() => console.log("TESTE")}>
-            0
+            {cart}
           </Cart>
         </LabelCart>
 

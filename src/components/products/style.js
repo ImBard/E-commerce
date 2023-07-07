@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import { styled } from "styled-components";
 
 export const Product = styled.div`
@@ -16,11 +17,11 @@ export const Img = styled.img`
   margin-bottom: 8px;
 `;
 
-export const Details = styled.div`
+export const Details = styled(Link)`
   display: grid;
   grid-template-columns: auto auto;
   align-items: center;
-
+  text-decoration: none;
 `;
 
 export const ProductName = styled.h2`
@@ -34,8 +35,24 @@ export const Price = styled.span`
   text-align: right;
 `;
 
-export const Select = styled.div`
+export const Select = styled.button`
   display: flex;
   grid-column: 1/3;
   background-color: darkorchid;
+  border: none;
+  height: 40px;
+  width: 100%;
+  justify-self: center;
+  color: white;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  font-size: 21px;
+  cursor: pointer;
+`;
+
+export const Desc = styled.p`
+  color: darkgray;
+  font-size: smaller;
+  margin-bottom: 3px;
 `;

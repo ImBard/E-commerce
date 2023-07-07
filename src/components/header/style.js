@@ -9,6 +9,7 @@ export const Head = styled.header`
   height: 125px;
   background-color: white;
   border-bottom: 2px solid #696969;
+  overflow: hidden;
 `;
 
 export const Top = styled.div`

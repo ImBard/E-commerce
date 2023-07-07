@@ -1,9 +1,12 @@
+import { HelperProvider } from './contexts/helpersContext'
 import { RoutesPath } from './routes/routes'
 
 function App() {
 
   return (
-    <RoutesPath />
+    <HelperProvider>
+      <RoutesPath />
+    </HelperProvider>
   )
 }
 
