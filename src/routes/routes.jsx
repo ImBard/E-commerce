@@ -7,6 +7,8 @@ export function RoutesPath() {
   return (
     <Router>
       <Routes>
+        <Route path="/" element={<ProductsView />} />
+        <Route path="*" element={<ProductsView />} />
         <Route path="/list" element={<ProductsView />} />
         <Route path="/item/:item" element={<ProductDetails />} />
       </Routes>
