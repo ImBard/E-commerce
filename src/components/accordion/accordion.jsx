@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useRef, useState } from "react";
 import { AccordionBody, AccordionContainer, AccordionContent, AccordionInner, AccordionItem, AccordionTitle } from "./style";
 import { Minus, Plus } from "@phosphor-icons/react";
 
@@ -27,7 +27,7 @@ const AccordionItems = ({
             <Minus size={21} color="#171717" weight="bold" />
           }
       </AccordionTitle>
-      <AccordionBody active={currentAccordion === i} bodyHeight={bodyHeight}>
+      <AccordionBody active={currentAccordion === i} height={bodyHeight}>
         <AccordionContent ref={refs[i]}>{content}</AccordionContent>
       </AccordionBody>
     </AccordionItem>
@@ -37,14 +37,18 @@ export function Accordion({ data }) {
   const [currentAccordion, setCurrentAccordion] = useState(null);
   const [bodyHeight, setBodyHeight] = useState(0);
 
+  const items = [];
 
+  for (let i = 0; i < data.length ; i++) {
+    items[i] = useRef(null);
+  } 
 
   return (
     <AccordionContainer>
       <AccordionInner>
         <AccordionItems
           accordionContent={data}
-          refs={data}
+          refs={items}
           currentAccordion={currentAccordion}
           setCurrentAccordion={setCurrentAccordion}
           setBodyHeight={setBodyHeight}
