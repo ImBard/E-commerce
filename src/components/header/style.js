@@ -8,7 +8,7 @@ export const Head = styled.header`
   width: 100%;
   height: 125px;
   background-color: white;
-  border-bottom: 2px solid #696969;
+  border-bottom: 1px solid #afafaf;
   overflow: hidden;
 `;
 

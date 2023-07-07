@@ -38,6 +38,7 @@ export const UlImg = styled.ul`
   overflow-x: scroll;
   
   @media only screen and (min-width: 750px) {
+    overflow: visible;
     width: 15%;
     height: 100%;
     flex-direction: column;
@@ -94,6 +95,11 @@ export const Rating = styled.div`
   margin-bottom: 8px;
 `;
 
+export const Stars = styled.div`
+  display: flex;
+  margin-right: 8px;
+  gap: 5px;
+`;
 export const ReviewQtd = styled.span`
   color: black;
   font-weight: 500;
@@ -112,7 +118,7 @@ export const Share = styled.button`
 
 export const TextGray = styled.p`
   color: #737373;
-  /* font-size: 16px; */
+  font-size: small;
   margin-bottom: 8px;
 `;
 
@@ -122,7 +128,9 @@ export const Bold = styled.b`
 
 export const Name = styled.h2`
   color: black;
-  font-size: 25px;
+  font-size: 21px;
+  font-weight: 900;
+  margin-bottom: 5px;
 `;
 
 // export const ProductId = styled.p`
@@ -133,7 +141,7 @@ export const Price = styled.span`
   font-weight: 700;
   color: black;
   font-size: large;
-  margin-bottom: 5px;
+  margin-bottom: 8px;
   font-size: larger;
 `;
 
@@ -186,4 +194,33 @@ export const AddCart = styled.button`
   border: none;
   font-weight: 600;
   font-size: medium;
+  margin-block: 33px;
+`;
+
+
+export const Recommended = styled.section`
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  margin-top: 33px;
+`;
+
+export const Title = styled.h1`
+  color: black;
+  margin-left: 13px;
+  font-size: xx-large;
+  @media only screen and (max-width: 875px) {
+    font-size: 33px;
+  }
+`;
+
+export const List = styled.div`
+   display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  @media only screen and (min-width: 875px) {
+    flex-direction: row;
+  }
 `;

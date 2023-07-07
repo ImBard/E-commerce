@@ -4,9 +4,20 @@ import { styled } from "styled-components";
 export const Product = styled.div`
   display: flex;
   flex-direction: column;
-  width: 32%;
+  
+  width: ${(props) => props.width};
+  padding: ${(props) => props.padding};
   height: 610px;
   overflow: hidden;
+  
+  @media only screen and (max-width: 750px) {
+    width: ${(props) => props.width};
+    height: fit-content;
+  }
+`;
+
+export const FullCard = styled.div`
+  display: ${(props) => props.display};
 `;
 
 export const Img = styled.img`

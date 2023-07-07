@@ -28,6 +28,7 @@ export function ProductsView() {
                 src={item.img}
                 name={item.name}
                 price={item.price}
+                showDescs={true}
               />
             )
           })}

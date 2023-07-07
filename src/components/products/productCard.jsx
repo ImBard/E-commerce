@@ -1,22 +1,28 @@
 /* eslint-disable react/prop-types */
 import { useContext } from "react";
 import { HelperContext } from "../../contexts/helpersContext";
-import { Desc, Details, Img, Price, Product, ProductName, Select } from "./style";
+import { Desc, Details, FullCard, Img, Price, Product, ProductName, Select } from "./style";
 
-export function ProductCard({ src, name, price, id }) {
-  const {plusCart} = useContext(HelperContext);
+export function ProductCard({ src, name, price, showDescs }) {
+  const { plusCart } = useContext(HelperContext);
+
   return (
-    <Product>
-      <Img src={src}/>
+    <Product
+      width={showDescs ? "32%" : "100%"}
+      padding={!showDescs ? "13px" : ""}
+    >
+      <Img src={src} />
       <Details to={`/item/${"teste"}`}>
-      <ProductName>{name}</ProductName>
-      <Price>${price}</Price>
-      <Desc>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eaque aliquid laudantium rerum</Desc>
+        <ProductName>{name}</ProductName>
+        <Price>${price}</Price>
       </Details>
-      <Select onClick={plusCart}>
-        Add to cart 
-      </Select>
-      
+      <FullCard display={!showDescs ? "none": ""}>
+        <Desc>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eaque aliquid laudantium rerum</Desc>
+        <Select onClick={plusCart}>
+          Add to cart
+        </Select>
+      </FullCard>
+
     </Product>
   );
 }
