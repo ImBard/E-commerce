@@ -1,0 +1,77 @@
+{
+  "infos": [
+    {
+      "title": "PRODUCT DETAILS",
+      "content": "Lorem ipsum dolor amet gastropub church-key gentrify actually tacos. Vegan taxidermy freegan before they sold out kickstarter copper mug iceland selvage blog prism. 8-bit vice drinking vinegar stumptown locavore. Microdosing unicorn typewriter sartorial cornhole. Man bun venmo cronut wolf shaman offal truffaut. Chillwave vinyl pug distillery adaptogen man bun tofu retro hammock kogi tbh jean shorts organic. Craft beer vinyl etsy, portland microdosing chicharrones lumbersexual crucifix cronut gentrify four loko tousled fingerstache."
+    },
+    {
+      "title": "SIZE & FIT",
+      "content": "Slow-carb knausgaard health goth kombucha tousled four loko. Messenger bag cronut +1, four loko williamsburg you probably haven't heard of them bicycle rights taiyaki ramps squid vaporware. Green juice typewriter master cleanse distillery viral wayfarers asymmetrical quinoa health goth semiotics succulents kinfolk pork belly shaman. Cronut salvia farm-to-table kickstarter shaman cloud bread echo park."
+    },
+    {
+      "title": "COMPOSITION",
+      "content": "Health goth humblebrag live-edge meggings pork belly actually ugh kombucha banh mi plaid etsy waistcoat. Hammock celiac crucifix tousled, dreamcatcher tbh truffaut direct trade cliche synth hot chicken palo santo pork belly man bun retro. Art party +1 live-edge occupy iceland selfies beard fanny pack godard 90's messenger bag. Bushwick irony umami woke. Kale chips raw denim austin, food truck flexitarian 90's deep v. Locavore green juice cold-pressed hexagon copper mug vegan sriracha man bun la croix photo booth forage. Succulents migas irony hella mumblecore keytar waistcoat aesthetic cornhole shabby chic tumblr semiotics readymade."
+    },
+    {
+      "title": "AVAILABILITY IN STORES",
+      "content": "Tbh next level subway tile ennui cloud bread. Master cleanse vaporware food truck, authentic distillery meggings ugh activated charcoal iceland gastropub fam. Raw denim direct trade pinterest keytar fam echo park wolf four dollar toast glossier kitsch taiyaki 8-bit austin. Brunch pinterest raw denim banh mi, bushwick organic artisan synth poutine man bun scenester. Occupy chartreuse food truck banh mi affogato shaman."
+    },
+    {
+      "title": "REVIEWS (12)",
+      "content": "Aesthetic tofu dreamcatcher lumbersexual jianbing poke PBR&B kogi heirloom. Sartorial artisan synth tacos vegan bushwick, lomo thundercats VHS disrupt bespoke scenester. Copper mug taiyaki occupy, coloring book drinking vinegar taxidermy direct trade intelligentsia quinoa raw denim succulents. Dreamcatcher copper mug fanny pack yuccie art party hoodie, ugh portland."
+    }
+  ],
+  "images": [
+    {
+      "img": "https://github.com/ImBard/E-commerce/blob/main/src/assets/imgModels/prada.jpg?raw=true"
+    },
+    {
+      "img": "https://github.com/ImBard/E-commerce/blob/main/src/assets/imgModels/prada1.jpg?raw=true"
+    },
+    {
+      "img": "https://github.com/ImBard/E-commerce/blob/main/src/assets/imgModels/prada2.jpg?raw=true"
+    },
+    {
+      "img": "https://raw.githubusercontent.com/ImBard/E-commerce/main/src/assets/imgModels/prada3.webp"
+    }
+  ],
+  "name": "Brique Saffiano leather bag",
+  "price": "155,00",
+  "sizes": ["S", "L", "XL", "XXL"],
+  "colors": ["#2F4E9F","#B5426F","#7AC89D","#D1A52E"],
+  "reviews": [
+    {
+      "review": "Excelente produto! Fiquei impressionado com a qualidade e o desempenho. Recomendo a todos.",
+      "autor": "João Silva"
+    },
+    {
+      "review": "O pior serviço que já experimentei. Não cumprem com o prometido e o atendimento ao cliente é péssimo.",
+      "autor": "Maria Souza"
+    },
+    {
+      "review": "Produto muito útil e prático. Superou minhas expectativas e facilitou meu dia a dia.",
+      "autor": "Pedro Santos"
+    },
+    {
+      "review": "Atendimento excepcional! A equipe foi muito prestativa e solucionou todas as minhas dúvidas rapidamente.",
+      "autor": "Ana Oliveira"
+    },
+    {
+      "review": "Achei o preço bastante acessível e a entrega foi super rápida. Com certeza voltarei a comprar neste site.",
+      "autor": "Carlos Fernandes"
+    },
+    {
+      "review": "Infelizmente, o produto veio com defeito. Entrei em contato com a empresa e estão providenciando a troca.",
+      "autor": "Sara Costa"
+    },
+    {
+      "review": "Ótimo custo-benefício. Estou muito satisfeito com minha compra.",
+      "autor": "Paulo Mendes"
+    },
+    {
+      "review": "Essa loja sempre oferece produtos de alta qualidade. Recomendo a todos os meus amigos.",
+      "autor": "Camila Rocha"
+    }
+  ],
+  "Product-code": "5DG5S2E89"
+}
