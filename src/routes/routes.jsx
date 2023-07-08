@@ -1,6 +1,7 @@
 import { Route, BrowserRouter as Router, Routes } from "react-router-dom";
 import { ProductsView } from "../pages/productsView/productsView";
 import { ProductDetails } from "../pages/productDetails/productDetails";
+import { Cart } from "../pages/cart/cartView";
 
 export function RoutesPath() {
 
@@ -11,6 +12,7 @@ export function RoutesPath() {
         <Route path="*" element={<ProductsView />} />
         <Route path="/list" element={<ProductsView />} />
         <Route path="/item/:item" element={<ProductDetails />} />
+        <Route path="/cart" element={<Cart />} />
       </Routes>
     </Router>
   );

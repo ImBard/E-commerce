@@ -35,7 +35,7 @@ export function Header() {
           })}
         </ListCategories>
 
-        <LabelCart htmlFor="Cart">
+        <LabelCart to={"/cart"} htmlFor="Cart">
           Cart
           <Cart id="Cart" onClick={() => console.log("TESTE")}>
             {cart}
