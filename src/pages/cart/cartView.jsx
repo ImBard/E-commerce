@@ -1,7 +1,7 @@
 import { ProductCart } from "../../components/cart/productCart";
 import { Name, Span } from "../../components/cart/style";
 import { Header } from "../../components/header/header";
-import { AddCode, FieldRadio, Fields, Input, LabelRadio, Main, PayButton, Payment, PaymentMethod, ProductList, Radio, Scroll, Title, Total } from "./style";
+import { AddCode, FieldRadio, Fields, Input, LabelRadio, Main, PayButton, Payment, PaymentMethod, ProductList, Radio, Title, Total } from "./style";
 
 export function Cart() {
 
@@ -24,13 +24,13 @@ export function Cart() {
         </ProductList>
         <Payment>
           <FieldRadio>
-            <LabelRadio htmlFor="delivery">
-              <Radio id="delivery" name="delivery" type="radio" />
+            <LabelRadio htmlFor="delivery1">
+              <Radio id="delivery1" name="delivery" type="radio" />
               <Name>Free delivery</Name>
               <Span>15-20 business days</Span>
             </LabelRadio>
-            <LabelRadio htmlFor="delivery">
-              <Radio id="delivery" name="delivery" type="radio" />
+            <LabelRadio htmlFor="delivery2">
+              <Radio id="delivery2" name="delivery" type="radio" />
               <Name>$20 DHL delivery</Name>
               <Span>5-7 business days</Span>
             </LabelRadio>
