@@ -20,7 +20,7 @@ export function Header() {
       <Top>
         <Translate>PT</Translate>
         <Title>Prada venice</Title>
-        <Sign><User size={20} />sign up</Sign>
+        <Sign to="/signin"><User size={20} />sign up</Sign>
       </Top>
       <Bottom>
         <Search>
@@ -35,7 +35,7 @@ export function Header() {
           })}
         </ListCategories>
 
-        <LabelCart to={"/cart"} htmlFor="Cart">
+        <LabelCart to="/cart" htmlFor="Cart">
           Cart
           <Cart id="Cart" onClick={() => console.log("TESTE")}>
             {cart}

@@ -44,7 +44,7 @@ export const Title = styled.h1`
   width: 80%;
   `;
 
-export const Sign = styled.button`
+export const Sign = styled(Link)`
   background: none;
   border: none;
   outline: none;
