@@ -18,7 +18,7 @@ export function Login() {
 
           <InputLabel htmlFor="email">
             Email
-            <Input type="text" id="email" placeholder="Enter your email" />
+            <Input type="email" id="email" placeholder="Enter your email" />
           </InputLabel>
 
           <InputLabel htmlFor="password">
