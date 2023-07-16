@@ -3,6 +3,7 @@ import { ProductsView } from "../pages/productsView/productsView";
 import { ProductDetails } from "../pages/productDetails/productDetails";
 import { Cart } from "../pages/cart/cartView";
 import { Login } from "../pages/login/login";
+import { Register } from "../pages/register/register";
 
 export function RoutesPath() {
 
@@ -15,6 +16,7 @@ export function RoutesPath() {
         <Route path="/item/:item" element={<ProductDetails />} />
         <Route path="/cart" element={<Cart />} />
         <Route path="/signin" element={<Login />} />
+        <Route path="/signup" element={<Register />} />
       </Routes>
     </Router>
   );
