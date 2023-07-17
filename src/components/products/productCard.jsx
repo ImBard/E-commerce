@@ -3,16 +3,15 @@ import { useContext } from "react";
 import { HelperContext } from "../../contexts/helpersContext";
 import { Desc, Details, FullCard, Img, Price, Product, ProductName, Select } from "./style";
 
-export function ProductCard({ src, name, price, showDescs }) {
+export function ProductCard({ src, name, price, showDescs, code }) {
   const { plusCart } = useContext(HelperContext);
-
   return (
     <Product
       width={showDescs ? "32%" : "100%"}
       padding={!showDescs ? "13px" : ""}
     >
       <Img src={src} />
-      <Details to={`/item/${"teste"}`}>
+      <Details to={`/item/${code}`}>
         <ProductName>{name}</ProductName>
         <Price>${price}</Price>
       </Details>

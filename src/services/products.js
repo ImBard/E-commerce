@@ -1,8 +1,13 @@
 import axios from "axios";
 
 class ProductServices {
-  async detailsProduct() {
-    return await axios.get("https://raw.githubusercontent.com/ImBard/E-commerce/main/teste/data.json")
+  async detailsProduct(code) {
+    console.log(code)
+    return await axios.get("http://localhost:3000/api/v1/products/"+code)
+  }
+
+  async getAllProducts() {
+    return await axios.get("http://localhost:3000/api/v1/products/view")
   }
 }
 const productServices = new ProductServices();

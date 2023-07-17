@@ -148,6 +148,8 @@ export const Register = styled(Link)`
   justify-content: center;
   align-items: center;
   margin-top: 50px;
+  color: black;
+  gap: 5px;
 `;
 
 export const Cover = styled.div`

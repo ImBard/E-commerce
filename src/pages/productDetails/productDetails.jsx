@@ -6,26 +6,47 @@ import { Accordion } from "../../components/accordion/accordion";
 import { ProductCard } from "../../components/products/productCard";
 import productServices from "../../services/products";
 import { Star } from "@phosphor-icons/react";
+import { useParams } from "react-router-dom";
 
 export function ProductDetails() {
-  // const { item } = useParams()
+  const { slug } = useParams()
   const [mainImg, setMainImg] = useState("");
   const [produto, setProduto] = useState({});
+  const [accordion, setAccordion] = useState([]);
   useEffect(() => {
-    getProduto();
+    getProduto(slug);
   }, []);
 
-
-  async function getProduto() {
-    productServices.detailsProduct()
+  async function getProduto(code) {
+    console.log(code)
+    productServices.detailsProduct(code)
       .then((response) => {
         setProduto(response.data);
-        handleImg(response.data.images[0].img)
-        console.log(response.data.accordion)
+        handleImg(response.data.imagesEntity[0].path);
+        createAccordionStructure(response.data);
+        console.log(response.data);
       })
       .catch((error) => {
         console.error(error);
       });
+  }
+
+  function createAccordionStructure(data) {
+    const infos = [
+      {
+        title: "PRODUCT DETAILS",
+        content: data.details
+      },
+      {
+        title: "SIZE & FIT",
+        content: data.sizeAndFit
+      },
+      {
+        title: "COMPOSITION",
+        content: data.composition
+      }
+    ]
+    setAccordion(infos);
   }
 
 
@@ -59,15 +80,15 @@ export function ProductDetails() {
       <Product>
         <Imgs>
           <UlImg>
-            {produto?.images?.map((image) => {
+            {produto?.imagesEntity?.map((image) => {
               return (
-                <LiImg key={image.img} onClick={() => handleImg(image.img)}>
-                  <LittleImg src={image.img} />
+                <LiImg key={image.img} onClick={() => handleImg(image.path)}>
+                  <LittleImg src={`http://localhost:3000/static/product/` + image.path} />
                 </LiImg>
               );
             })}
           </UlImg>
-          <MainImg src={mainImg} />
+          <MainImg src={`http://localhost:3000/static/product/` + mainImg} />
         </Imgs>
 
         <Infos>
@@ -79,12 +100,12 @@ export function ProductDetails() {
               <Star size={16} color="#e0a910" weight="fill" />
               <Star size={16} color="#e0a910" weight="fill" />
             </Stars>
-            <ReviewQtd>Review - {produto.reviews?.length}</ReviewQtd>
+            <ReviewQtd>Reviews - {produto.reviewEntity?.length}</ReviewQtd>
             <Share>share</Share>
           </Rating>
 
           <Name>{produto.name}</Name>
-          <TextGray>Product code: {produto["Product-code"]}</TextGray>
+          <TextGray>Product code: {produto.code}</TextGray>
           <Price>${produto.price}</Price>
           <Selector>
             <TextGray>Size: <Bold>S</Bold></TextGray>
@@ -114,9 +135,9 @@ export function ProductDetails() {
           <AddCart>Add to Cart</AddCart>
 
           {/* Enquanto o produto.accordion não estiver populado ele nao renderiza o componente accordion */}
-          {produto.accordion &&
-            < Accordion data={produto.accordion} />
-          }
+          {/* {accordion &&
+            < Accordion data={accordion} />
+          } */}
         </Infos>
 
       </Product>

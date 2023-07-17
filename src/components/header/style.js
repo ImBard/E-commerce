@@ -56,6 +56,7 @@ export const Sign = styled(Link)`
   align-items: end;
   gap: 5px;
   font-weight: 600;
+  text-decoration: none;
 `;
 
 export const Search = styled.div`
