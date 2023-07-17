@@ -13,7 +13,7 @@ export function RoutesPath() {
         <Route path="/" element={<ProductsView />} />
         <Route path="*" element={<ProductsView />} />
         <Route path="/list" element={<ProductsView />} />
-        <Route path="/item/:item" element={<ProductDetails />} />
+        <Route path="/item/:slug" element={<ProductDetails />} />
         <Route path="/cart" element={<Cart />} />
         <Route path="/signin" element={<Login />} />
         <Route path="/signup" element={<Register />} />
