@@ -164,6 +164,7 @@ export const RegisterButton = styled(Link)`
   align-items: center;
   margin-top: 13px;
   gap: 5px;
+  color: black;
 `;
 
 export const Cover = styled.div`
