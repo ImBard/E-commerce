@@ -1,6 +1,6 @@
 import { styled } from "styled-components";
 
-export const Product = styled.main`
+export const Product = styled.form`
   display: flex;
   flex-direction: column;
   width: 100%;

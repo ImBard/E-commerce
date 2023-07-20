@@ -16,7 +16,6 @@ const AccordionItems = ({
         onClick={() => { currentAccordion !== i ? setCurrentAccordion(i) : 
           setCurrentAccordion(null);
           setBodyHeight(refs[i].current.clientHeight);
-          console.log(refs[i].current.clientHeight);
         }}
       >
         {title}
@@ -27,7 +26,7 @@ const AccordionItems = ({
             <Minus size={21} color="#171717" weight="bold" />
           }
       </AccordionTitle>
-      <AccordionBody active={currentAccordion === i} height={bodyHeight}>
+      <AccordionBody heigth={currentAccordion === i ? `${bodyHeight}px` : '0'} >
         <AccordionContent ref={refs[i]}>{content}</AccordionContent>
       </AccordionBody>
     </AccordionItem>

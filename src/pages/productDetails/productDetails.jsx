@@ -1,57 +1,66 @@
 // import { useParams } from "react-router-dom";
 import { Header } from "../../components/header/header";
 import { AddCart, Bold, ButtonSelectorColor, ButtonSelectorSize, Imgs, Infos, LiImg, LiSelector, List, LittleImg, MainImg, Name, Price, Product, Rating, Recommended, ReviewQtd, Selector, Share, Stars, TextGray, Title, UlImg, UlSelector } from "./style";
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { Accordion } from "../../components/accordion/accordion";
 import { ProductCard } from "../../components/products/productCard";
 import productServices from "../../services/products";
 import { Star } from "@phosphor-icons/react";
 import { useParams } from "react-router-dom";
+import { HelperContext } from "../../contexts/helpersContext";
+import { useForm } from "react-hook-form";
 
 export function ProductDetails() {
   const { slug } = useParams()
   const [mainImg, setMainImg] = useState("");
   const [produto, setProduto] = useState({});
-  const [accordion, setAccordion] = useState([]);
+  const { createAccordionStructure } = useContext(HelperContext);
+  const [cart, setCart] = useState({
+    size: '',
+    color: {},
+  });
+
+  const { handleSubmit } = useForm();
+  const { plusCart } = useContext(HelperContext);
+
   useEffect(() => {
     getProduto(slug);
   }, []);
 
   async function getProduto(code) {
-    console.log(code)
     productServices.detailsProduct(code)
       .then((response) => {
         setProduto(response.data);
         handleImg(response.data.imagesEntity[0].path);
-        createAccordionStructure(response.data);
-        console.log(response.data);
       })
       .catch((error) => {
         console.error(error);
       });
   }
-
-  function createAccordionStructure(data) {
-    const infos = [
-      {
-        title: "PRODUCT DETAILS",
-        content: data.details
-      },
-      {
-        title: "SIZE & FIT",
-        content: data.sizeAndFit
-      },
-      {
-        title: "COMPOSITION",
-        content: data.composition
-      }
-    ]
-    setAccordion(infos);
-  }
-
+  const accordion = createAccordionStructure(produto);
 
   function handleImg(img) {
     setMainImg(img);
+  }
+
+  async function onSubmit() {
+    cart.productsEntityId = produto.id
+    console.log(cart)
+    productServices.addCart(cart)
+      .then(() => {
+        plusCart();
+      })
+      .catch((error) => {
+        console.error(error);
+      })
+  }
+
+  function handleCart(prop, value) {
+    if (prop === 'size') {
+      setCart({ ...cart, size: value })
+    } else {
+      setCart({ ...cart, color: value })
+    }
   }
 
 
@@ -77,12 +86,12 @@ export function ProductDetails() {
   return (
     <>
       <Header />
-      <Product>
+      <Product onSubmit={handleSubmit(onSubmit)}>
         <Imgs>
           <UlImg>
-            {produto?.imagesEntity?.map((image) => {
+            {produto?.imagesEntity?.map((image, index) => {
               return (
-                <LiImg key={image.img} onClick={() => handleImg(image.path)}>
+                <LiImg key={index} onClick={() => handleImg(image.path)}>
                   <LittleImg src={`http://localhost:3000/static/product/` + image.path} />
                 </LiImg>
               );
@@ -108,12 +117,14 @@ export function ProductDetails() {
           <TextGray>Product code: {produto.code}</TextGray>
           <Price>${produto.price}</Price>
           <Selector>
-            <TextGray>Size: <Bold>S</Bold></TextGray>
+            <TextGray>Size: <Bold>{cart.size}</Bold></TextGray>
             <UlSelector>
               {produto.sizes?.map((size) => {
                 return (
                   <LiSelector key={size}>
-                    <ButtonSelectorSize>{size}</ButtonSelectorSize>
+                    <ButtonSelectorSize type="button" onClick={() => handleCart('size', size)}
+
+                    >{size}</ButtonSelectorSize>
                   </LiSelector>
                 )
               })}
@@ -121,26 +132,30 @@ export function ProductDetails() {
             </UlSelector>
           </Selector>
           <Selector>
-            <TextGray>Color: <Bold>Orange</Bold></TextGray>
+            <TextGray>Color: <Bold>{cart.color.name}</Bold></TextGray>
             <UlSelector>
               {produto.colors?.map((color) => {
                 return (
-                  <LiSelector key={color}>
-                    <ButtonSelectorColor color={color}></ButtonSelectorColor>
+                  <LiSelector key={color.hex}>
+                    <ButtonSelectorColor
+                      type="button"
+                      onClick={() => handleCart('color', color)}
+                      color={color.hex}>
+                    </ButtonSelectorColor>
                   </LiSelector>
                 )
               })}
             </UlSelector>
           </Selector>
-          <AddCart>Add to Cart</AddCart>
+          <AddCart type="submit">Add to Cart</AddCart>
 
           {/* Enquanto o produto.accordion não estiver populado ele nao renderiza o componente accordion */}
-          {/* {accordion &&
+          {accordion &&
             < Accordion data={accordion} />
-          } */}
+          }
         </Infos>
 
-      </Product>
+      </Product >
       <Recommended>
         <Title>You Might Also Like</Title>
         <List>

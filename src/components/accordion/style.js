@@ -1,4 +1,4 @@
-import { css, styled } from "styled-components";
+import { styled } from "styled-components";
 
 export const AccordionContainer = styled.div`
 `;
@@ -33,15 +33,9 @@ export const AccordionBody = styled.div`
   position: relative;
   padding: 0;
   margin: 0;
-  height: 0;
+  height: ${ ( {heigth} ) =>  heigth };
   overflow: hidden;
   transition: height 0.3s;
-
-  ${({ active, height }) =>
-    active &&
-    css`
-      height: ${height}px;
-    `}
 `;
 
 export const AccordionContent = styled.p`

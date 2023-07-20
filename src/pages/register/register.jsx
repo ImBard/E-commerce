@@ -1,13 +1,12 @@
 import { useState } from "react";
 import { BackStep, Container, Content, Cover, Form, Grid, Input, InputLabel, Main, RegisterButton, SubTitle, SubmitButton, Title } from "./style";
 import { ArrowLeft } from "@phosphor-icons/react";
-// import LogoImg from "../../assets/logo.png";
 import { useForm } from "react-hook-form";
-import axios from "axios";
+import userServices from "../../services/users";
 
 export function Register() {
 
-  const { register, handleSubmit, formState } = useForm();
+  const { register, handleSubmit } = useForm();
 
   async function onSubmit(data) {
     const user = {
@@ -27,11 +26,7 @@ export function Register() {
     };
     data = { user, address };
     console.log("Submitted", data);
-    await axios.post("http://localhost:3000/api/v1/users", data, {
-      headers: {
-        "Content-Type": "application/json"
-      }
-    })
+    userServices.createUser(data)
       .then((response) => {
         console.log(response);
       })

@@ -2,18 +2,40 @@ import { createContext, useState } from "react";
 
 export const HelperContext = createContext({});
 
-export function HelperProvider({children}) {
+export function HelperProvider({ children }) {
 
-  const [cart, setCart] = useState(0);
+  const [cart, setCart] = useState(Number(localStorage.getItem('cart')));
 
 
-  function plusCart(id) {
-    setCart(cart+1);
+  function plusCart() {
+    const quantity = Number(localStorage.getItem('cart')) + 1;
+    localStorage.setItem('cart', quantity);
+    setCart(quantity);
   }
-  return  (
+
+  function createAccordionStructure(data) {
+    const infos = [
+      {
+        title: "PRODUCT DETAILS",
+        content: data.details
+      },
+      {
+        title: "SIZE & FIT",
+        content: data.sizeAndFit
+      },
+      {
+        title: "COMPOSITION",
+        content: data.composition
+      }
+    ]
+    return infos;
+  }
+
+  return (
     <HelperContext.Provider value={{
       plusCart,
-      cart
+      cart,
+      createAccordionStructure,
     }}>
       {children}
     </HelperContext.Provider>
