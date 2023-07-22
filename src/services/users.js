@@ -9,6 +9,10 @@ class UserServices {
       }
     })
   }
+
+  async getMyCart(data) {
+    return await axios.get("http://localhost:3000/api/v1/products/my-cart", data)
+  }
 }
 const userServices = new UserServices();
 export default userServices;
